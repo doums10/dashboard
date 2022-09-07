@@ -26,9 +26,11 @@ import {
 
 import "./App.css";
 import { activeCellChanged } from "@syncfusion/ej2/spreadsheet";
+import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
-	const activeMenu = true;
+	const { activeMenu } = useStateContext()
+	
 	return (
 		<div>
 			<BrowserRouter>
