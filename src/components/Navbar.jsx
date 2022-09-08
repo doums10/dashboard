@@ -28,7 +28,33 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-	const { activeMenu, setActiveMenu } = useStateContext();
+	const {
+		activeMenu,
+		setActiveMenu,
+		isClicked,
+		setIsClicked,
+		handleClick,
+		screenSize,
+		setScreenSize
+	} = useStateContext();
+// know what is the size of window at the beginning and launch function handleresize
+	useEffect(() => {
+		const handleResize = () => setScreenSize(window.innerWidth);
+		window.addEventListener('resize', handleResize);
+		handleResize();
+
+		window.removeEventListener('resize',handleResize);
+	}, [])
+
+	//track some changes when window width changes
+	useEffect(() => {
+		if (screenSize <= 900) {
+			setActiveMenu(false);
+		} else {
+			setActiveMenu(true);
+		}
+	},[screenSize])
+	
 	return (
 		<div className="flex justify-between p-2 md:mx-6 relative">
 			<NavButton
@@ -73,6 +99,11 @@ const Navbar = () => {
 						<MdKeyboardArrowDown className="text-gray-400 text-14" />
 					</div>
 				</TooltipComponent>
+
+				{isClicked.cart && <Cart />}
+				{isClicked.chat && <Chat />}
+				{isClicked.notification && <Notification />}
+				{isClicked.userProfile && <UserProfile />}
 			</div>
 		</div>
 	);
