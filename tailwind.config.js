@@ -16,6 +16,7 @@ module.exports = {
 				"secondary-dark-bg": "#33373E",
 				"light-gray": "#F7F7F7",
 				"half-transparent": "rgba(0, 0, 0, 0.5)",
+				"orange": "#fec90f",
 			},
 			borderWidth: {
 				1: "1px",
@@ -39,7 +40,8 @@ module.exports = {
 				590: "590px",
 			},
 			backgroundImage: {
-				"hero-pattern": "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+				"hero-pattern":
+					"url('https://demos.wrappixel.com/premium-admin-templates/react/flexy-react/main/static/media/welcome-bg-2x-svg.25338f53.svg')",
 			},
 		},
 	},
