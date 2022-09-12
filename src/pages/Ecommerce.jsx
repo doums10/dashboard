@@ -49,9 +49,8 @@ const Ecommerce = () => {
 									{item.percentage}
 								</span>
 							</p>
-							<h1>Bonjour</h1>
-							<h1>Bonjour</h1>
-							<h1>Bonjour</h1>
+							<p className="text-sm text-gray-400 mt-1">{item.title}</p>
+						
 						</div>
 					))}
 				</div>
