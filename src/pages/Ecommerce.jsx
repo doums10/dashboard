@@ -74,6 +74,27 @@ const Ecommerce = () => {
 							</p>
 						</div>
 					</div>
+
+					<div className="mt-10 flex gap-10 flex-wrap justify-center">
+						<div className="border-r-1 border-color m-4 pr-10 ">
+							<div className="">
+								<p>
+									<span className="text-3xl font-semibold ">$93,438</span>
+									<span className="p-1.5 hover:drop-shadow-xl bg-green-400 rounded-full cursor-pointer text-white ml-3 text-xs">
+										23%
+									</span>
+								</p>
+								<p className="text-gray-500 mt-1">Budget</p>
+							</div>
+							<div className="mt-8">
+								<p>
+									<span className="text-3xl font-semibold ">$48,438</span>
+									
+								</p>
+								<p className="text-gray-500 mt-1">Expense</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
