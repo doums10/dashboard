@@ -8,7 +8,11 @@ const Kanban = () => {
 			<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 				<Header category="App" title="Kanban" />
 				<KanbanComponent>
-
+				<ColumnsDirective>
+					{kanbanGrid.map((item,index) => (
+						<ColumnDirective key={index} {...item}/>
+					))}
+				</ColumnsDirective>
 				</KanbanComponent>
 			</div>
 		);
