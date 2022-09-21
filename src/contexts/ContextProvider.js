@@ -1,3 +1,4 @@
+import { MODEL_CHANGED_PLUGIN } from "@syncfusion/ej2-react-richtexteditor";
 import React, { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
@@ -16,15 +17,18 @@ export const ContextProvider = ({ children }) => {
 	const [themeSettings, setThemeSettings] = useState(false)
 
 	// change the mode on settings
-	const setMode =(mode) => {
-		setCurrentMode(mode);
-		localStorage.setItem('themeMode');
+	const setMode =(e) => {
+		setCurrentMode(e.target.value);
+		localStorage.setItem('themeMode', e.target.value);
+		setThemeSettings(false)
 	}
 	// change color on settings
-		const setColor = (mode) => {
-			setCurrentColor(mode);
-			localStorage.setItem("colorMode");
-		};
+		const setColor = (color) => {
+			setCurrentColor(color);
+			localStorage.setItem("colorMode",color);
+			setThemeSettings(false)
+	}
+		
 	const handleClick = (clicked) => {
 		setIsClicked({ ...initialState, [clicked]: true });
 	};
@@ -39,9 +43,9 @@ export const ContextProvider = ({ children }) => {
 				screenSize,
 				setScreenSize,
 				currentColor,
-				setCurrentColor,
+				setColor,
 				currentMode,
-				setCurrentMode,
+				setMode,
 				themeSettings,
 				setThemeSettings,
 			}}
