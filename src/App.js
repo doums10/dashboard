@@ -20,19 +20,23 @@ import {
 	ColorPicker,
 	ColorMapping,
 	Editor,
-	
 } from "./pages";
-
 
 import "./App.css";
 import { activeCellChanged } from "@syncfusion/ej2/spreadsheet";
-import { useStateContext } from './contexts/ContextProvider';
+import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-	const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
-	
+	const {
+		activeMenu,
+		themeSettings,
+		setThemeSettings,
+		currentColor,
+		currentMode,
+	} = useStateContext();
+
 	return (
-		<div>
+		<div className={currentMode === "Dark" ? 'dark' : ""}>
 			<BrowserRouter>
 				<div className="flex relative dark:bg-main-dark-bg">
 					<div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
