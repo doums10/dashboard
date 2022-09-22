@@ -378,17 +378,19 @@ export const LinePrimaryXAxis = {
   edgeLabelPlacement: 'Shift',
   majorGridLines: { width: 0 },
   background: 'white',
+  
 };
 
 export const LinePrimaryYAxis = {
-  labelFormat: '{value}%',
-  rangePadding: 'None',
-  minimum: 0,
-  maximum: 100,
-  interval: 20,
-  lineStyle: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
+	labelFormat: "{value}%",
+	rangePadding: "None",
+	minimum: 0,
+	maximum: 100,
+	interval: 20,
+	lineStyle: { width: 0 },
+	majorTickLines: { width: 0 },
+	minorTickLines: { width: 0 },
+	
 };
 
 export const customersGrid = [
