@@ -36,7 +36,7 @@ const App = () => {
 	} = useStateContext();
 
 	return (
-		<div className={currentMode === "Dark" ? 'dark' : ""}>
+		<div className={currentMode === "Dark" ? "dark" : ""}>
 			<BrowserRouter>
 				<div className="flex relative dark:bg-main-dark-bg">
 					<div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -90,6 +90,7 @@ const App = () => {
 								<Route path="/bar" element={<Bar />} />
 								<Route path="/pie" element={<Pie />} />
 								<Route path="/financial" element={<Financial />} />
+								<Route path="/color-mapping" element={<ColorMapping />} />
 								<Route path="/pyramid" element={<Pyramid />} />
 								<Route path="/stacked" element={<Stacked />} />
 							</Routes>
