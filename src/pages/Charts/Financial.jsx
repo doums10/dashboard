@@ -3,7 +3,7 @@ import {
 	ChartComponent,
 	SeriesCollectionDirective,
 	SeriesDirective,
-	HiloSeries,
+	HiloOpenCloseSeries,
 	Tooltip,
 	DateTime,
 	Zoom,
@@ -43,10 +43,12 @@ const Financial = () => {
 					background={currentMode === "Dark" ? "#33373E" : "#fff"}
 					style={{ textAlign: "center" }}
 					tooltip={{ enable: true, shared: true }}
+					legendSettings={{ visible: false }}
+					
 				>
 					<Inject
 						services={[
-							HiloSeries,
+							HiloOpenCloseSeries,
 							Tooltip,
 							DateTime,
 							Zoom,
@@ -56,13 +58,17 @@ const Financial = () => {
 					/>
 					<SeriesCollectionDirective>
 						<SeriesDirective
-							datasource={returnValue}
-							type="Hilo"
+							dataSource={returnValue}
+							type="HiloOpenClose"
+							animation={{ enable: true }}
+							bearFillColor="#2ecd71"
+							bullFillColor="#e74c3d"
 							xName="x"
 							low="low"
 							high="high"
+							open="open"
+							close="close"
 							name="Apple Inc"
-							yName="low"
 						/>
 					</SeriesCollectionDirective>
 				</ChartComponent>
